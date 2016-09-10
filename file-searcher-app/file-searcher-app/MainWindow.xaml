@@ -1,36 +1,34 @@
 ﻿<controls:MetroWindow x:Class="file_searcher_app.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:file_searcher_app"
-        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
-        xmlns:views="clr-namespace:file_searcher_app.Views"
-        xmlns:viewModels="clr-namespace:file_searcher_app.ViewModels"
-        mc:Ignorable="d"
-        Title="Index and Search" 
-        TitleCaps="False"
-        NonActiveGlowBrush="#CDFF0000"
-        ShowIconOnTitleBar="True"
-        ShowTitleBar="True"
-        WindowStartupLocation="CenterScreen"
-        WindowState="Maximized"
-        Height="500" 
-        Width="750">
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        xmlns:local="clr-namespace:file_searcher_app"
+                        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                        xmlns:views="clr-namespace:file_searcher_app.Views"
+                        xmlns:viewModels="clr-namespace:file_searcher_app.ViewModels"
+                        mc:Ignorable="d"
+                        Title="Index and Search" 
+                        TitleCaps="False"
+                        NonActiveGlowBrush="#CDFF0000"
+                        ShowIconOnTitleBar="True"
+                        Icon="Assets/logo-teal-bg.png"
+                        ShowTitleBar="True"
+                        WindowStartupLocation="CenterScreen"
+                        WindowState="Maximized"
+                        Height="500" 
+                        Width="750">
     <Window.DataContext>
         <viewModels:MainViewModel/>
     </Window.DataContext>
     <Grid Margin="5">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" MinWidth="400"/>
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!-- Search Input & Search Results -->
-        <views:SearchView Margin="0,0,5,0"/>
-
         <!-- Search History & Indexed Folders List -->
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -39,6 +37,12 @@
             <views:IndexedFoldersView Grid.Row="1"
                                       Margin="0,5,0,0"/>
         </Grid>
+
+        <!-- Search Input & Search Results -->
+        <views:SearchView Margin="5,0,0,0"
+                          Grid.Column="1"/>
+
+     
 
 
     </Grid>

@@ -12,28 +12,29 @@
               Background="SeaGreen"
               controls:ControlsHelper.HeaderFontSize="20">
         <Grid>
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </Grid.Resources>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid>
-                <Grid.Resources>
-                    <ResourceDictionary>
-                        <ResourceDictionary.MergedDictionaries>
-                            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
-                        </ResourceDictionary.MergedDictionaries>
-                    </ResourceDictionary>
-                </Grid.Resources>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <TextBox controls:TextBoxHelper.ClearTextButton="True"
-                 controls:TextBoxHelper.UseFloatingWatermark="True"
-                 controls:TextBoxHelper.Watermark="Search for something..."
-                 FontSize="18"
-                 VerticalContentAlignment="Center">
+                         controls:TextBoxHelper.UseFloatingWatermark="True"
+                         controls:TextBoxHelper.Watermark="Search for something..."
+                         FontSize="18"
+                         VerticalContentAlignment="Center">
                     <TextBox.Style>
                         <Style BasedOn="{StaticResource SearchMetroTextBox}" TargetType="{x:Type TextBox}">
                             <Style.Triggers>
@@ -58,6 +59,15 @@
                                         Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
+            <StackPanel Grid.Row="3" 
+                        Margin="0,5,0,0"
+                        Orientation="Horizontal">
+                <Button Content="Export CSV"/>
+                <Button Content="Show Diff"
+                        Margin="5,0,0,0"/>
+                <Button Content="Open All"
+                        Margin="5,0,0,0"/>
+            </StackPanel>
         </Grid>
 
     </GroupBox>
